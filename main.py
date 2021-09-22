@@ -39,9 +39,9 @@ def main():
     matches23 = utils.match_features(kp2, des2, kp3, des3)
 
     # draw matches
-    #utils.draw_matches(img1, kp1, img3, kp3, matches13, "img1 - img3 matches")
-    #utils.draw_matches(img2, kp2, img3, kp3, matches23, "img2 - img3 matches")
-    #utils.draw_matches(img1, kp1, img2, kp2, matches12, "img1 - img2 matches")
+    utils.draw_matches(img1, kp1, img3, kp3, matches13, "img1 - img3 matches")
+    utils.draw_matches(img2, kp2, img3, kp3, matches23, "img2 - img3 matches")
+    utils.draw_matches(img1, kp1, img2, kp2, matches12, "img1 - img2 matches")
 
     # get match points and essential matrix
     pt12_1, pt12_2 = utils.get_points_from_matches(matches12, kp1, kp2)

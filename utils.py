@@ -47,7 +47,7 @@ def match_features(kp1, des1, kp2, des2):
     good_matches = []
     # ratio test as per Lowe's paper
     for i, (m, n) in enumerate(matches):
-        if m.distance < 0.5 * n.distance:
+        if m.distance < 0.3 * n.distance:
             good_matches.append(matches[i])
 
     return good_matches
@@ -104,7 +104,9 @@ def plot_trajectory(position1, position2, position3):
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     points = np.concatenate((position1[0:3, 3:4], position2[0:3, 3:4], position3[0:3, 3:4]),1)
-    ax.plot(points[0], points[1], points[2])
+    # daha iyi grafik elde edebilmek icin eklendi
+    ax.plot(points[0], points[2], points[1])
+    #ax.plot(points[0], points[1], points[2])
     plt.show()
     return
 
